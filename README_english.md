@@ -34,7 +34,7 @@ Detailed documents for pruning optimizers:
 
 ---
 
-**<font size='3'>2. Examples of using pruning optimizers in mnist dataset:</font>**
+**<font size='3'>2. Examples of using pruning optimizers on mnist dataset:</font>**
 
 <font size='3'>2.1. prune dense network:</font>
 
@@ -61,9 +61,9 @@ Detailed documents for pruning optimizers:
 *notes: current optimizers only support python3.7，more versions will be released soon. [mxnet installation](https://mxnet.apache.org/get_started/?platform=macos&language=python&), [pytorch installation](https://pytorch.org/)*
 
 ---
-**<font size='3'>3. finetune sparse network in users' datasets </font>**
+**<font size='3'>3. finetune sparse network on users' datasets </font>**
 
-**<font size='3'>3.1.  imagenet数据集压缩后的模型在cifar10数据集上finetune:</font>**
+**<font size='3'>3.1.  finetune on cifar10 dataset using the sparse network pruned on imagenet dataset:</font>**
 * [x] pytorch version: ([results](./docs/results.md#task-2-finetune-sparse-network-on-classification-dataset))
 
     `python3.7 examples/cifar10/torch_res50_cifar10_224input.py`
@@ -72,35 +72,33 @@ Detailed documents for pruning optimizers:
 * [ ] tensorflow 1.14 version
 * [ ] mxnet version
 
-**<font size='3'>3.2.  coco数据集压缩后的模型在全目标检测数据集上finetune:</font>** : 
-* [x] pytorch版本: ([实验结果](./docs/results.md#task-3-finetune-sparse-network-on-detection-dataset))
+**<font size='3'>3.2.  finetune on street scenes using the sparse network pruned on coco dataset:</font>** : 
+* [x] pytorch version: ([results](./docs/results.md#task-3-finetune-sparse-network-on-detection-dataset))
 
     `python3.7 examples/cocoSubset/torch_res50_cocoSubset.py`
 
-* [ ] tensorflow1.14版本
-* [ ] mxnet版本
+* [ ] tensorflow 1.14 version
+* [ ] mxnet version
 
 ---
 **<font size='3'>4. Moffett AI model zoo </font>**
 
-我们同时提供一些已经稀疏化的预训练模型供使用，模型的稀疏率和性能见下表。模型数量会逐渐增加。目前仅提供模型，训练代码稍后也会提供。
+We provide some sparse networks for users to finetune on their own datasets. More sparse networks will be constantly provided in this repo.
 
-**<font size='3'>分类模型 </font>**
+**<font size='3'>Classification task</font>**
 
-|模型|框架|训练数据集|稀疏率|准确率|说明|
+|model|framework|training dataset|sparsity|top1|notes|
 |-|-|-|-|-|-|
-|resnet50v1d|mxnet|imagenet|95%|74.6%|同上|
-|resnet50v1d|torch|imagenet|95%|74.6%|[Moffett IR生成<sup>1</sup>](./examples/cifar10/resnet50v1d_graph.png)|
+|resnet50v1d|mxnet|imagenet|95%|74.6%|pretrain model from gluoncv|
+|resnet50v1d|torch|imagenet|95%|74.6%|[network in Moffett IR format<sup>1</sup>](./examples/cifar10/resnet50v1d_graph.png)|
 
-**<font size='3'>检测模型 </font>**
+**<font size='3'>Detection task </font>**
 
-|模型|框架|训练数据集|稀疏率|MAP|说明|
+|model|framework|training dataset|sparsity|MAP|notes|
 |-|-|-|-|-|-|
-|resnet50v1d+centernet|mxnet|coco|80%|31.0%|基于gluoncv的预训练模型进行剪枝||
-|resnet50v1d+centernet|torch|coco|80%|31.0%|[Moffett IR生成<sup>1</sup>](./examples/cocoSubset/resnet50v1d_centernet.png)|
+|resnet50v1d+centernet|mxnet|coco|80%|31.0%|pretrain model from gluoncv||
+|resnet50v1d+centernet|torch|coco|80%|31.0%|[network in Moffett IR format<sup>1</sup>](./examples/cocoSubset/resnet50v1d_centernet.png)|
 
-[点击此连接Google drive下载模型](https://drive.google.com/open?id=1xZ-lDh1CGnaFMpsQft37kyfocPf16KuR)
+[download the sparse networks](https://drive.google.com/open?id=1xZ-lDh1CGnaFMpsQft37kyfocPf16KuR)
 
-[点击此连接Baidu drive下载](https://pan.baidu.com/s/1fL0WYtDJohzujl9AeZbY3w)，提取码：9irl。
-
-<sup>1</sup>**<font size='3'>[Moffett IR转换不同深度学习框架模型的使用说明](./docs/reconstruct_network.md) </font>**
+<sup>1</sup>**<font size='3'>[Moffett IR convert models across major deep learning platforms](./docs/reconstruct_network.md) </font>**

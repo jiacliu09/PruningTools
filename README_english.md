@@ -36,7 +36,6 @@ Detailed documents for pruning optimizers:
 
 **<font size='3'>2. Examples of using pruning optimizers in mnist dataset:</font>**
 
-
 <font size='3'>2.1. prune dense network:</font>
 
  * [x] mxnet version：
@@ -48,30 +47,30 @@ Detailed documents for pruning optimizers:
   * [x] tensorflow version:
     `python3.7 examples/mnist/tensorflow_pruning_simple.py`
 
-   <font size='3'>2.2. 从已经稀疏的模型继续训练：</font> ([实验结果](./docs/results.md#pruning-and-finetune-results))
+   <font size='3'>2.2. continue pruning/training from a sparse network：</font> ([results](./docs/results.md#pruning-and-finetune-results))
 
-   * [x] mxnet版本:
+   * [x] mxnet version:
     `python3.7 examples/mnist/mxnet_pruning_simple_resume.py`
 
-   * [x] pytorch版本:
+   * [x] pytorch version:
     `python3.7 examples/mnist/pytorch_pruning_simple_resume.py`
 
-   * [ ] tensorflow版本:
+   * [ ] tensorflow version:
     `python3.7 examples/mnist/tensorflow1_pruning_simple_resume.py`
 
-*注意事项: 目前剪枝优化器只适用于python3.7版本，其他版本会陆续更新。[mxnet安装连接](https://mxnet.apache.org/get_started/?platform=macos&language=python&), [pytorch 安装连接](https://pytorch.org/)*
+*notes: current optimizers only support python3.7，more versions will be released soon. [mxnet installation](https://mxnet.apache.org/get_started/?platform=macos&language=python&), [pytorch installation](https://pytorch.org/)*
 
 ---
-**<font size='3'>3. 稀疏化模型在不同数据集的finetune </font>**
+**<font size='3'>3. finetune sparse network in users' datasets </font>**
 
 **<font size='3'>3.1.  imagenet数据集压缩后的模型在cifar10数据集上finetune:</font>**
-* [x] pytorch版本: ([实验结果](./docs/results.md#task-2-finetune-sparse-network-on-classification-dataset))
+* [x] pytorch version: ([results](./docs/results.md#task-2-finetune-sparse-network-on-classification-dataset))
 
     `python3.7 examples/cifar10/torch_res50_cifar10_224input.py`
 
     `python3.7 examples/cifar10/torch_res50_cifar10_32input.py`
-* [ ] tensorflow1.14版本
-* [ ] mxnet版本
+* [ ] tensorflow 1.14 version
+* [ ] mxnet version
 
 **<font size='3'>3.2.  coco数据集压缩后的模型在全目标检测数据集上finetune:</font>** : 
 * [x] pytorch版本: ([实验结果](./docs/results.md#task-3-finetune-sparse-network-on-detection-dataset))

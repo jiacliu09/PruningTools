@@ -3,7 +3,10 @@
 
 
 **<font size='3'>Two modes for using the pruning tools by Moffett AI:<font>**
-1. [x] In order to prune their neural networks, users only need to replace the optimizer in their codes by the one provided by Moffett AI. No change in other codes is needed! For example: 
+1. [x] Prune dense networks 
+
+In order to prune their neural networks, users only need to replace the optimizer in their codes by the one provided by Moffett AI. No change in other codes is needed! For example: 
+
     ```key
     # import Moffett optimizer in pytorch training script 
     from optimizers import pytorch_pruning as pruning
@@ -14,7 +17,10 @@
     ......
     ```
 
-2. [x] Users can also use the sparse networks provided by Moffett AI to finetune on their own dataset, while the sparsity is kept. 
+2. [x] Finetune the sparse networks on users' own datasets 
+
+Users can also use the sparse networks provided by Moffett AI to finetune on their own dataset, while the sparsity is kept. 
+
 ---
 
 **<font size='3'>This repo includes the following contents:</font>**

@@ -7,7 +7,6 @@
 
 In order to prune their neural networks, users only need to replace the optimizer in their codes by the one provided by Moffett AI. No change in other codes is needed! For example: 
 
-    ```
     # import Moffett optimizer in pytorch training script 
     from optimizers import pytorch_pruning as pruning
     ......
@@ -15,7 +14,6 @@ In order to prune their neural networks, users only need to replace the optimize
     # optimizer = torch.optim.SGD(...)
     optimizer = pruning.SGDSparse(...)
     ......
-    ```
 
 2. Finetune the sparse networks on users' own datasets 
 

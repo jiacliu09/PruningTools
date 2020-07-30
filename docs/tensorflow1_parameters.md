@@ -1,4 +1,4 @@
-## tensorflow v1 框架优化器文档：
+## tensorflow v1 sparse optimizer：
 
 ### One sparse optimizers are released
 

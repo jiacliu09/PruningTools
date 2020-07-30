@@ -1,4 +1,4 @@
-## pytorch sparse optimizer：
+## pytorch sparse optimizers：
 
 ### Two sparse optimizers are released
 
@@ -17,11 +17,11 @@ Besides the common parameters used in optimizers, such as learning rate, momentu
 
 * sparse_step (int, default=0):
 
-      pruning steps 
+      pruning within the sparse step 
 
 * frequency (int, default=100):
-
-      pruning frequency  
+      
+      in how many steps, pruning a interval toward the target sparsity
 
 * keywords_no_sparse (list, default=['bias', 'beta', 'gamma']):
 
